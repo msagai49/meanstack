@@ -1,0 +1,156 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/frontend.css">
+<link rel="stylesheet" href="css/main.css">
+
+  <title>contact list </title>
+</head>
+<body>
+
+
+  <!-- nav bar -->
+  <nav class="navbar navbar-inverse" id="navBar" ng-controller="AppCtrl">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <span class="navbar-brand">Sudan Phonebook</span>
+          </div>
+          <ul class="nav navbar-nav">
+              <li id="li_home" class="navLi"><a href="#home">Home</a></li>
+              <li id="li_register" class="navLi"><a href="#register">Register</a></li>
+              <li id="li_login" class="navLi"><a href="#login">Login</a></li>
+              <li id="li_about" class="navLi"><a href="#about">About Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+              <li><a href="#" class="pull-right hidden-xs"  style="color:red;">hello <span id="uNameSpan" ></span></a></li>
+          </ul>
+      </div>
+  </nav>
+  <!-- end nav bar -->
+
+<div  ng-controller="AppCtrl" >
+        <p ng-bind="sessionval"></p>
+    <ul class="nav navbar-nav pull-right">
+        <li><a href="#" class="pull-right hidden-xs"  style="color:red;">hello<span id="uNameSpan"></span></a></li>
+    </ul>
+</div>
+
+
+  <div class="container page"   ng-style="contactstyle" ng-show="myval"   ng-controller="AppCtrl" id="home">
+    <h1>Contact</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>         
+          <th>Number</th>
+          <th>Job</th>
+          <th>Location</th>
+          <th>Action</th>
+          <th>&nbsp; &nbsp; </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" required ng-model="contact.name"></td>
+          <td><input class="form-control" required ng-model="contact.number"></td>
+          <td><input class="form-control" required ng-model="contact.job"></td>
+          <td><input class="form-control" required ng-model="contact.location"></td>
+          <td><button class="btn btn-primary" id="add"  ng-click="addContact()">Add Contact</button></td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="contact in contactlist">
+          <td>{{contact.name}}</td>
+          <td>{{contact.number}}</td>
+          <td>{{contact.job}}</td>
+          <td>{{contact.location}}</td>
+          <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+
+<div class="page container"  style="display: none;" id="about">
+    <h2 class="text-center">About Us</h2>
+    <p>
+       Whitepages is a provider of online directory services, fraud screening and
+       identity verification for businesses, public record background checks, and
+       other products, based on its database of contact information for people and businesses. It has the largest database available of contact information on US residents.
+    </p>
+</div>
+
+
+
+<div class="page container " style="display: none;" ng-controller="AppCtrl" id="register">
+   <div class="container login-page">
+            <h1 class="text-center">
+               
+                <span class="selected" data-class="signup-form">SignUp</span>
+            </h1>
+    <!-- start sign up form-->
+        <form class="signup-form">
+         <label for="inputForName">User Name</label>
+        <div class="input-container">
+
+        <input required="required" class="form-control" type="text"   name="users.username" ng-model="users.username" autocomplete="off" placeholder="enter username"/>
+        </div>
+        <label for="inputForName">Password</label>
+        <div class="input-container"><input required="required" ng-model="users.password" class="form-control" type="password" name="password" autocomplete="off" placeholder="Enter Complex Password" /> </div>
+        <label for="inputForName">Retype Password</label>
+        <div class="input-container"><input required="required" ng-model="users.password" class="form-control" type="password" name="password-again" placeholder="Retype Your Password"/></div>
+        <label for="inputForName" id="mail">Email Address</label>
+        <div class="input-container"><input  class="form-control" ng-model="users.email" required="required" type="email" name="email" autocomplete="off" placeholder="enter valid email address" id="mail"/></div>
+        <button type="submit" ng-click="adduser()" name="submit" class="btn btn-success custombtn btn-block"  value="signup" > Sign Up </button>
+
+    </form>
+     <!-- end sign up form-->
+
+
+    </div><!-- /container -->
+
+
+
+        
+    
+
+ </div>
+
+
+ 
+ <div class="container page login-page"  ng-style="logstyle"    ng-controller="AppCtrl" id="login">
+    <h1 class="text-center">
+        <span class="selected" data-class="login-form">Login </span>
+    </h1>
+    <form class="login-form" >
+    <label for="inputForName">User Name</label>
+        <div class="input-container">
+        <input required class="form-control"  required ng-model="user.username" type="text" name="username" autocomplete="off" placeholder="enter username"/></div>
+        <label for="inputForName">Password </label>
+        <div class="input-container">
+        <input required class="form-control" type="password" ng-model="user.password" name="password" autocomplete="off" placeholder="enter password" /></div>
+        
+        <button type="submit" name="submit" ng-click="login()" class="btn btn-info custombtn btn-block" value="login"> Login </button>
+
+    </form>
+
+</div> 
+
+<script src="css/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+<script src="css/jquery.min.js"></script>
+<script src="css/bootstrap.min.js"></script>
+<script src="controllers/main.js"></script>
+<script src="css/frontend.js"></script>
+</body>
+</html>

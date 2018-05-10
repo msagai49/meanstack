@@ -1,0 +1,171 @@
+/* Main Rules*/
+body{
+       background-color:#F4F4F4;
+       font-size:16px;
+}
+
+h1{
+    font-size:45px;
+    margin:40px 0;
+    font-weight:bold;
+    color:#666;
+}
+.input-container{
+    position: relative;
+}
+
+.asterisk{
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color: #c52424;
+}
+.main-form .asterisk{
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    top: 8px;
+    color: #c52424;
+}
+.contactform .asterisk{
+    font-size: 20px;
+    position: absolute;
+    right: 30px;
+    top: 37px;
+    color: #c52424;
+}
+
+.main-table td{
+    background-color:#FFF;
+    vertical-align:middle !important;
+}
+
+.main-table .btn{
+    padding:3px 10px;
+}
+
+.main-table tr:first-child td {
+    background-color: #333;
+    color: #FFF;
+}
+
+.copyright{
+ background-color:#333;
+ color:#AAA;
+ padding:10px 0;
+ margin-top:20px;
+ font-size:18px;
+}
+
+.copyright span{
+ color:#0895D1;
+}
+
+
+.parent-footer{
+    background-color: #353535;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.parent-footer ul li a{
+    color: #fff;
+ }
+.parent-footer ul li a:hover{
+    background-color: #353535;
+    color: #3dcc9e;
+ }
+.parent-footer ul li{
+    display:inline-block;
+    padding:0px;
+
+}
+.parent-footer hr{
+       margin-top:3px;
+       margin-bottom: 5px;
+}
+.parent-footer span h4{
+           color: #cdcdd0;
+           font-size: 13px;
+}
+
+.my-image{
+    width:65px;
+    height:65px;
+}
+
+.upper-bar{
+    padding: 10px;
+    background-color:#FFF;
+    margin-bottom:10px;
+}
+
+.upper-bar span{
+    color:#d9534f;
+}
+
+/*start login page*/
+.login-page form,.div-error{
+    max-width:330px;
+    margin:auto;
+}
+.login-page .div-error{
+    max-width:330px;
+    margin:auto;
+}
+.login-page form input{
+    margin-bottom: 10px;
+}
+.login-page h1{
+    color:#C0C0C0;
+}
+.login-page .selected{
+    color:#B22020;
+}
+.login-page h1 span{
+    cursor:pointer;
+}
+.login-page .signup-form{
+    display: block;
+}
+.login-page [data-class="signup-form"].selected{
+    color:#5cb85c;
+}
+.login-page [data-class="login-form"].selected{
+    color:#337AB7 ;
+}
+.div-error .msg{
+    padding:10px;
+    text-align: left;
+    border-left:5px solid #cd6858;
+    background-color:#FFF;
+    margin-bottom:8px;
+    border-right:1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom:1px solid #e0e0e0;
+    color:#919191;
+}
+.div-error .error{
+    border-left:5px solid #cd6858;
+}
+
+ /*end login page*/
+.custombtn{
+   color:#fff;
+   background: #5bc0de;
+   width: 30%;
+   margin-right: 60px;
+   font-size:large;
+}
+
+.welcomeuser{
+margin-top:23px;
+color:#d9534f;
+
+}
+.welcomeguest{
+margin-top:23px;
+color:#5cb85c;
+
+}
